@@ -33,79 +33,133 @@ Fredrik bajers vej 7 i kantinen
 Følg linje til makør
 ** 2
 Drej 45 grader mod højre
+
 kør til grå streg rammes
+
 Følg linje til makør
 ** 3
 Drej 45 grader mod venstre
+
 kør til grå streg rammes
+
 Følg linje til makør
 ** 4
 Drej 45 grader mod højre
+
 Kør til grå streg rammes
+
 Åben klo
+
 Følg linje til tryk sensor rammes
+
 luk klo
+
 Kør frem til markør
 ** 5
 åben klo
+
 Bak til grå linje
+
 drej 135 grader mod venstre
+
 Kør frem til grå linje
+
 følg linje til markør
 ** 6a TODO
 Drej 45 grader mod venstre
+
 følg linje til første markør
+
 kør lige ud til hvid
+
 søg mod venstre
+
 følg linje til markør
 ** 6b
 Følg linje til markør
 ** 7
 drej 45 grader mod venstre
+
 kør frem til grå linje nr 2
+
 følg linje til markør
 ** 8
 drej 45 grader mod venstre
+
 kør frem til grå
+
 følg linje til markør
+
 Kør til centrum
+
 drej mod flaske
+
 kør frem til tryk sensor rammes
+
 luk klo
+
 bak til centrum
+
 åben klo
+
 bak til stor grå linje
+
 følg linje venstre om
+
 tjek til venstre i et interval
+
 når hovedlinje findes kør frem til markør
 ** 9
 Drej 10 grader venstre
+
 kør indtil grå linje rammes
+
 følg linje til markør
 ** 10
 drej 45 grader mod venstre
+
 kør frem til grå
+
 drej 90 grader mod højre
+
 kør frem til grå linje rammes
+
 følg linje til markør
 ** 11
 kør frem til 10 cm til mur
+
 drej x grader mod venstre
+
 kør frem til 10 cm til mur
+
 drej x grader mod højre
+
 kør frem i x sekunder
+
 søg mod højre
+
 følg linje til markør
 ** 12
 drej 45 grader mod højre
+
 kør frem x antal sekunder
+
 drej 90+ grader
+
 kør frem til linje findes
+
 Følg linje til markør
 ** 13
 kør frem til hvid rammes
+
 mål afstand til væg
+
 del afstand med to
+
 kør frem til afstands måler viser forrige svar
+
 stop
+
 Afspil we are the champions
+* Failsafe
+Drej om sig selv for at finde grå streg
