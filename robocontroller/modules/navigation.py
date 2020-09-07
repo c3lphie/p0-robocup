@@ -15,10 +15,10 @@ right_motor = Motor(Port.B)
 front_motor = Motor(Port.C)
 
 # Init sensor
-line_sensor = ColorSensor(S1)
-touch_sensor = TouchSensor(S2)
-ultra_sensor = UltrasonicSensor(S3)
-gyro_sensor = GyroSensor(S4)
+line_sensor = ColorSensor(Port.S1)
+touch_sensor = TouchSensor(Port.S2)
+ultra_sensor = UltrasonicSensor(Port.S3)
+gyro_sensor = GyroSensor(Port.S4)
 
 
 
