@@ -8,13 +8,13 @@ Overleaf: TBA
 
 # Definering af motor og sensor
 
-left_motor = Motor(Port.A)
-right_motor = Motor(Port.B)
-front_motor = Motor(Port.C)
+left_motor = Motor(Port.A)\
+right_motor = Motor(Port.B)\
+front_motor = Motor(Port.C)\
 
-line_sensor = ColorSensor(S1)
-touch_sensor = TouchSensor(S2)
-ultra_sensor = UltrasonicSensor(S3)
+line_sensor = ColorSensor(S1)\
+touch_sensor = TouchSensor(S2)\
+ultra_sensor = UltrasonicSensor(S3)\
 gyro_sensor = GyroSensor(S4)
 
 
