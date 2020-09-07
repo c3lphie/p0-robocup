@@ -21,8 +21,6 @@ ultra_sensor = UltrasonicSensor(S3)
 gyro_sensor = GyroSensor(S4)
 
 
-
-
 wheel_diameter = 55.5
 
 # Init drive base
@@ -62,6 +60,21 @@ def follow_line():
     can_drive = True
     while can_drive:
         deviation = line_sensor.reflection() - threshold
+
+        turn_rate = PROPERTIONAL_GAIN * deviation
+
+        robot.drive(DRIVE_SPEED, turn_rate)
+
+        if line_sensor.reflection() <= BLACK + 5:
+            robot.stop()
+            can_drive = False
+    return
+
+
+def follow_line_white():
+    can_drive = True
+    while can_drive:
+        deviation = line_sensor.reflection() - 26
 
         turn_rate = PROPERTIONAL_GAIN * deviation
 
