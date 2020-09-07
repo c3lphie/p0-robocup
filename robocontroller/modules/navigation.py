@@ -10,11 +10,18 @@ from pybricks.tools import wait
 from pybricks.robotics import DriveBase
 
 # Init motor
-left_motor = Motor(Port.B)
-right_motor = Motor(Port.C)
+left_motor = Motor(Port.A)
+right_motor = Motor(Port.B)
+front_motor = Motor(Port.C)
 
-# Init color sensor
-line_sensor = ColorSensor(Port.s3)
+# Init sensor
+line_sensor = ColorSensor(S1)
+touch_sensor = TouchSensor(S2)
+ultra_sensor = UltrasonicSensor(S3)
+gyro_sensor = GyroSensor(S4)
+
+
+
 
 wheel_diameter = 55.5
 
