@@ -10,10 +10,12 @@ robot.distance(150)
 robot.turn(-100)
 
 # køre frem til grå linje findes og følger den frem til markøren
- 
-while : True
+
+move = True
+
+while : move = True
     if line_sensor.reflection() <= white + 5:
         robot.stop()
+        move = False
+    else
         navigation.follow_line()
-        return : True
-return False
