@@ -13,9 +13,9 @@ robot.turn(-100)
 
 move = True
 
-while : move = True
+while move = True
     if line_sensor.reflection() <= white + 5:
         robot.stop()
         move = False
     else
-        navigation.follow_line()
+        navigation.follow_line():
