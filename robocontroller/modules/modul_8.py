@@ -60,6 +60,7 @@ def run_section():
         robot.turn(-360)
         if line_sensor.reflection() in range(robot.GREY - 5, robot.GREY + 5):
             robot.stop()
+            robot.close_claw()
 
         check_exit()
     return
