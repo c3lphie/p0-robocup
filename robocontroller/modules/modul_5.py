@@ -1,4 +1,3 @@
-# åben klo how
 
 from navigation import WallE
 robot = WallE()
@@ -7,6 +6,7 @@ drive = True
 drive2 = False
 drive3 = False
 
+# Åben klo
 while drive == True:
     robot.open_claw
     robot.wait(5000)
