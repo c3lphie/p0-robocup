@@ -74,9 +74,9 @@ class WallE(DriveBase):
         return
 
     def open_claw():
-        front_motor.run_until_stalled(100, then=Stop.HOLD, duty_limit=None)
-        pass
+        front_motor.run_until_stalled(100, then=Stop.HOLD, duty_limit=50)
+        return
 
     def close_claw():
-        front_motor.run_until_stalled(-100, then=Stop.HOLD, duty_limit=None)
-        pass
+        front_motor.run_until_stalled(-100, then=Stop.HOLD, duty_limit=50)
+        return
