@@ -1,5 +1,4 @@
 import navigation
+robot = WallE()
 #Modullet skal følge linje til makør
-navigation.follow_line()
-
-test123
+robot.follow_line()
