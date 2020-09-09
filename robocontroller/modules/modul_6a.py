@@ -1,8 +1,9 @@
 #!/usr/bin/env pybricks-micropython
 import navigation
-from pybricks.parameters import Port
 
-robot = WallE(Port.A,Port.B,Port.C)
+robot = WallE()
+gyro = robot.gyro_sensor
+
 
 
 def get_speed_by_angle(angle):
@@ -16,8 +17,9 @@ def run_module():
 
     can_drive = True
     while can_drive:
-    robot.drive(get_speed_by_angle())
+    robot.drive(get_speed_by_angle(gyro.angle()))
     if line_sensor.reflection() >= WHITE:
         robot.stop()
         can_drive = False
-        seek_line("left")
+
+    seek_line("left")

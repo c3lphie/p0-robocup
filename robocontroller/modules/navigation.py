@@ -72,3 +72,11 @@ class WallE(DriveBase):
                 robot.stop()
                 can_drive = False
         return
+
+    def open_claw():
+        front_motor.run_until_stalled(100, then=Stop.HOLD, duty_limit=None)
+        pass
+
+    def close_claw():
+        front_motor.run_until_stalled(-100, then=Stop.HOLD, duty_limit=None)
+        pass
