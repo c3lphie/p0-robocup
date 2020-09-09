@@ -4,7 +4,7 @@
 # kør frem til grå linje rammes
 # følg linje til markør
 
-import navigation
+from navigation import follow_line, seek_line
 
 # Start med at dreje -45 grader for at vende mod tredje moduls gråstreg
 robot.turn(-45)
@@ -20,10 +20,10 @@ robot.drive(500)
 # Kør frem til grå linje rammes
 # while line_sensor.reflection() > GREY + 5
      if line_sensor.reflection() <= GREY + 5:
-         navigation.follow_line
+         follow_line
      else: 
          robot.drive(500)
 
 # Følg linjen indtil den skifter til sort
-navigation.follow_line
+follow_line
 
