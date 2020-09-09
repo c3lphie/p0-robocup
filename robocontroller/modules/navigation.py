@@ -16,36 +16,32 @@ from pybricks.robotics import DriveBase
 
 
 class WallE(DriveBase):
+    # Init sensors
+    line_sensor = ColorSensor(Port.S1)
+    touch_sensor = TouchSensor(Port.S2)
+    ultra_sensor = UltrasonicSensor(Port.S3)
+    gyro_sensor = GyroSensor(Port.S4)
+
+    # Init motors
+    left_motor = Motor(Port.A)
+    right_motor = Motor(Port.B)
+    front_motor = Motor(Port.C)
+
+    # Constants
     wheel_diameter = 47.56
     axle_track = 100
-
     BLACK = 3
     WHITE = 31
     GREY = 18
+    DRIVE_SPEED = 100
+    PROPERTIONAL_GAIN = 1.2
 
     threshold = (BLACK + WHITE + GREY) / 3
 
-    DRIVE_SPEED = 100
-
-    PROPERTIONAL_GAIN = 1.2
-
     robot = DriveBase(left_motor, right_motor, wheel_diameter, axle_track)
 
-    def __init__(
-        self,
-        left_motor,
-        right_motor,
-        middle_motor,
-    ):
+    def __init__():
         super().__init__(left_motor, right_motor, wheel_diameter, axle_track)
-        self.left_motor = left_motor
-        self.right_motor = right_motor
-        self.middle_motor = middle_motor
-
-        self.line_sensor = line_sensor
-        self.touch_sensor = touch_sensor
-        self.ultra_sensor = ultra_sensor
-        self.gyro_sensor = gyro_sensor
 
     def seek_line(direction):
         if direction == "right":
