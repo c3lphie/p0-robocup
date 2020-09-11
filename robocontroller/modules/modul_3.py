@@ -1,10 +1,10 @@
 import navigation
 
 robot = WallE()
-#drej 45 grader mod venstre
-robot.turn(45)
+# drejer 45 grader mod venstre
+robot.turn(-45)
 
-#kør til grå streg rammes
+# kør til grå streg rammes
 while robot.line_sensor.reflection() == GREY
     robot.drive(100)
     if robot.line_sensor.reflection() > GREY
