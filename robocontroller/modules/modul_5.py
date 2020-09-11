@@ -7,14 +7,14 @@ drive2 = False
 drive3 = False
 
 # Åben klo
-while drive == True:
-    robot.open_claw
+while drive:
+    robot.open_claw()
     robot.wait(5000)
     drive2 = True
     drive = False
 
 # Bak til grå linje og drej 135 grader mod venstre
-while drive2 == True:
+while drive2:
    if line_sensor.reflection() <= robot.GREY + 5:
         robot.drive(-500)
     else:
@@ -24,12 +24,12 @@ while drive2 == True:
         drive2 = False
 
 # Kør frem til grå linje og følg linje til markør
-while drive3 == True
-   if line_sensor.reflection() in range(robot.GREY - 5, robot.GREY + 5)
+while drive3:
+   if line_sensor.reflection() in range(robot.GREY - 5, robot.GREY + 5):
         robot.drive(500)
-    elif line_sensor.reflection() <= robot.BLACK + 5
+    elif line_sensor.reflection() <= robot.BLACK + 5:
        drive3 = False
     else:
-        robot.follow_line
+        robot.follow_line()
 
 

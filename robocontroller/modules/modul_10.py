@@ -14,7 +14,7 @@ robot.wait(5000)
 # Robotten kører ligeud indtil farven under den skifter til grå og drejer derefter 90 grader den anden vej
 drive10 = True
 drive10_2 = False
-while drive10 == True:
+while drive10:
     if robot.line_sensor.reflection() <= robot.GREY + 5:
         robot.turn(90)
         robot.wait(7500)
@@ -26,7 +26,7 @@ while drive10 == True:
 # Kør frem til grå linje rammes
 
 
-while drive10_2 == True:
+while drive10_2:
     if robot.line_sensor.reflection() > robot.GREY + 10:
         robot.drive(500)
     elif robot.line_sensor.reflection() <= robot.BLACK + 5:
