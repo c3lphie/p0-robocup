@@ -1,4 +1,5 @@
 import navigation
+robot = WallE()
 #Drej 10 grader venstre
 robot.turn(10)
 #kør indtil grå linje rammes
