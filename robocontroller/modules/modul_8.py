@@ -34,7 +34,7 @@ def find_flask():
 
 
 def run_section():
-    robot.turn(45)
+    robot.turn(-45)
     can_drive = True
     while can_drive:
         robot.drive(100)
