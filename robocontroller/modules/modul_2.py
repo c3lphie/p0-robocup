@@ -20,4 +20,3 @@ robot.turn(45)
 robot.straight(100)
 navigation.seek_line("right")
 navigation.follow_line()
-
