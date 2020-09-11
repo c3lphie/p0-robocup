@@ -17,3 +17,5 @@ navigation.followline()
     #hvis sidste farve ikke er ny farve
     #sidste farve er ny farve
     #gråcounter ++
+
+# Lydeffekt: "I love cocaine!" https://youtu.be/Y4q_Tx3lAQA?t=51

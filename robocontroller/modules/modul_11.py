@@ -32,3 +32,6 @@ while = move2
         robot.run(200)
         move2 = False
     else navigation.follow_line
+
+# Spil "Ronald Reagan speech - Mr. Gorbachev, tear down that wall" når robotten kører over muren
+# https://youtu.be/GCO9BYCGNeY?t=112

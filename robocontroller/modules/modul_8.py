@@ -79,3 +79,5 @@ def run_section():
 # følg linje venstre om
 # tjek til venstre i et interval
 # når hovedlinje findes kør frem til markør
+
+# Musikønske: Dead Or Alive - You Spin Me Round (Like A Record) mens robotten drejer 720 grader.
