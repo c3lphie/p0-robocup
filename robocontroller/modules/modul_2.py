@@ -16,7 +16,7 @@ Colorsenor=farvesensor
 
 #Code:
 reset_angle(0)
-run_target(100,45,then=Stop.HOLD, wait=True)
+robot.turn(45)
 robot.straight(100)
 navigation.seek_line("right")
 navigation.follow_line()
