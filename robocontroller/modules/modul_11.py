@@ -9,8 +9,8 @@ robot.turn(-45)
 # måler afstanden til muren og bevæger sig frem til 10 cm før muren.
 move = True
 
-while = move
-    if ultra_sensor.distance() <= 100
+while = move:
+    if ultra_sensor.distance() <= 100 :
         robot.run(200)
         move = False
 robot.stop()
@@ -27,8 +27,11 @@ robot.turn(-90)
 
 move2 = True
 
-while = move2
-    if line_sensor.reflection() <= WHITE + 5
+while = move2:
+    if line_sensor.reflection() <= GREY + 5:
         robot.run(200)
         move2 = False
     else navigation.follow_line
+
+# Spil "Ronald Reagan speech - Mr. Gorbachev, tear down that wall" når robotten kører over muren
+# https://youtu.be/GCO9BYCGNeY?t=112

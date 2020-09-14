@@ -22,3 +22,6 @@ gyro_sensor = GyroSensor(S4)
 p0.org - pseudokode brainstorm af bane
 
 billede.png - bane brainstorm
+
+# Nice to have:
+# - Før mur i modul_11.py, vent lidt for komedisk effekt, afspil lydfil (såsom "Move bitch, get out the way", eller et kampvogns skud, en sirene eller noget), og kravl over muren. 

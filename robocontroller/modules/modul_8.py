@@ -34,7 +34,7 @@ def find_flask():
 
 
 def run_section():
-    robot.turn(45)
+    robot.turn(-45)
     can_drive = True
     while can_drive:
         robot.drive(100)
@@ -79,3 +79,5 @@ def run_section():
 # følg linje venstre om
 # tjek til venstre i et interval
 # når hovedlinje findes kør frem til markør
+
+# Musikønske: Dead Or Alive - You Spin Me Round (Like A Record) mens robotten drejer 720 grader.

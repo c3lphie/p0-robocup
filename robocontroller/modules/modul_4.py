@@ -15,9 +15,14 @@ while robot.ultra_sensor.distance(silent=True):
         robot.stop
 #luk klo
 robot.close_claw()
+
+# Spil Celine Dion "Titanic"
+
 #Kør frem til markør
 while robot.line_sensor.reflection() >= BLACK + 5:
        robot.drive()
     if robot.line_sensor.reflection() <= BLACK + 5:
        robot.stop()
       can_drive = False
+
+      
