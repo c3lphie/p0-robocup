@@ -2,9 +2,6 @@
 from navigation import WallE
 
 robot = WallE()
-gyro = robot.gyro_sensor
-
-
 
 def get_speed_by_angle(angle):
     speed = angle * angle * 0.2 + 1
