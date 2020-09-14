@@ -1,5 +1,5 @@
 #!/usr/bin/env pybricks-micropython
-import navigation
+from navigation import WallE
 
 robot = WallE()
 gyro = robot.gyro_sensor
@@ -17,9 +17,9 @@ def run_module():
 
     can_drive = True
     while can_drive:
-    robot.drive(get_speed_by_angle(gyro.angle()))
-    if line_sensor.reflection() >= WHITE:
+    robot.drive(get_speed_by_angle(robot.gyro_sensor.angle()))
+    if robot.line_sensor.reflection() >= WHITE:
         robot.stop()
         can_drive = False
 
-    seek_line("left")
+    robot.seek_line("left")
