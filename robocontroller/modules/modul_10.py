@@ -1,3 +1,4 @@
+#!/usr/bin/env pybricks-micropython
 # drej 45 grader mod venstre
 # kør frem til grå
 # drej 90 grader mod højre

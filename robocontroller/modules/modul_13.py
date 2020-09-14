@@ -1,3 +1,4 @@
+#!/usr/bin/env pybricks-micropython
 from navigation import WallE
 
 robot = WallE()
