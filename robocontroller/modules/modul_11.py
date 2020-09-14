@@ -1,3 +1,4 @@
+#!/usr/bin/env pybricks-micropython
 from navigation import WallE
 
 # køre frem til 10 cm til mur

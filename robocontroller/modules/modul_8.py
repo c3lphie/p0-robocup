@@ -1,3 +1,4 @@
+#!/usr/bin/env pybricks-micropython
 import navigation
 from pybricks.tools import wait
 

@@ -30,9 +30,9 @@ class WallE(DriveBase):
     # Constants
     wheel_diameter = 47.56
     axle_track = 100
-    BLACK = 3
-    WHITE = 31
-    GREY = 18
+    BLACK = 6
+    WHITE = 80 
+    GREY = 46
     DRIVE_SPEED = 100
     PROPERTIONAL_GAIN = 1.2
 
