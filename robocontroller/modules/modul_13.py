@@ -2,10 +2,13 @@ from navigation import WallE
 
 robot = WallE()
 
+move = True
+move = False
+
 # kør frem til hvid rammes
-while robot.line_sensor.reflection() != robot.WHITE - 5:
+while move:
+    robot.straight(50)
     robot.reset()
-    robot.drive(500)
 
 # mål afstand til væg
 Afstand = robot.ultra_sensor.distance()
@@ -15,13 +18,13 @@ Afstand_stop = Afstand / 2
 
 
 # kør frem til afstands måler viser forrige svar
-move = True
+move2 = True
 
 while move:
     Distance_measured = robot.distance()
     if Distance_measured == Afstand_stop:
         robot.stop()
-        move = False
+        move2 = False
     else:
         robot.drive()
 
