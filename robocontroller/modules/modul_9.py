@@ -1,12 +1,14 @@
-import navigation
+from navigation import WallE
+
 robot = WallE()
-#Drej 10 grader venstre
+# Drej 10 grader venstre
 robot.turn(-10)
-#kør indtil grå linje rammes
-while line_sensor.reflection() > GREY + 10:
+# kør indtil grå linje rammes
+while robot.line_sensor.reflection() > GREY + 10:
     robot.drive(100)
-if line_sensor.reflektion() == GREY:
-    break
+    if line_sensor.reflektion() == GREY:
+        break
+
 robot.follow_line()
-#tilføj in range til linereflection
-#følg linje til markør
+# tilføj in range til linereflection
+# følg linje til markør

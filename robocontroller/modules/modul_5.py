@@ -1,5 +1,6 @@
-
 from navigation import WallE
+from pybricks.tools import wait
+
 robot = WallE()
 
 drive = True
@@ -15,7 +16,7 @@ while drive:
 
 # Bak til grå linje og drej 135 grader mod venstre
 while drive2:
-   if line_sensor.reflection() <= robot.GREY + 5:
+    if line_sensor.reflection() <= robot.GREY + 5:
         robot.drive(-500)
     else:
         robot.turn(-135)
@@ -25,10 +26,10 @@ while drive2:
 
 # Kør frem til grå linje og følg linje til markør
 while drive3:
-   if line_sensor.reflection() in range(robot.GREY - 5, robot.GREY + 5):
+    if line_sensor.reflection() in range(robot.GREY - 5, robot.GREY + 5):
         robot.drive(500)
     elif line_sensor.reflection() <= robot.BLACK + 5:
-       drive3 = False
+        drive3 = False
     else:
         robot.follow_line()
 

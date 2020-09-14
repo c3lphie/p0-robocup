@@ -5,6 +5,7 @@
 # følg linje til markør
 
 from navigation import WallE
+
 robot = WallE()
 
 # Start med at dreje -45 grader for at vende mod tredje moduls gråstreg
@@ -32,9 +33,9 @@ while drive10_2:
     elif robot.line_sensor.reflection() <= robot.BLACK + 5:
         drive10_2 = False
     else:
-        robot.follow_line
+        robot.follow_line()
 
 # Følg linjen indtil den skifter til sort
-robot.follow_line
+robot.follow_line()
 
 # Musikønske: "Tokyo Drift" https://www.youtube.com/watch?v=iuJDhFRDx9M
