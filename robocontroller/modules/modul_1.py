@@ -1,3 +1,4 @@
+#!/usr/bin/env pybricks-micropython
 import navigation
 
 robot = WallE()

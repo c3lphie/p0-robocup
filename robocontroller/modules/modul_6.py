@@ -1,3 +1,4 @@
+#!/usr/bin/env pybricks-micropython
 #6a
 #Drej 45 grader mod venstre
 #følg linje til første markør
