@@ -1,5 +1,5 @@
 #!/usr/bin/env pybricks-micropython
-import navigation
+from .navigation import WallE
 from pybricks.tools import wait
 
 robot = WallE()

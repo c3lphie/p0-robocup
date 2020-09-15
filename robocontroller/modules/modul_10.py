@@ -5,7 +5,7 @@
 # kør frem til grå linje rammes
 # følg linje til markør
 
-from navigation import WallE
+from .navigation import WallE
 
 robot = WallE()
 

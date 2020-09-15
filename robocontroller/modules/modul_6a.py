@@ -1,5 +1,5 @@
 #!/usr/bin/env pybricks-micropython
-from navigation import WallE
+from .navigation import WallE
 
 robot = WallE()
 class module_6a:

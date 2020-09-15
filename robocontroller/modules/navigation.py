@@ -31,7 +31,7 @@ class WallE(DriveBase):
     wheel_diameter = 47.56
     axle_track = 100
     BLACK = 6
-    WHITE = 80 
+    WHITE = 80
     GREY = 46
     DRIVE_SPEED = 100
     PROPERTIONAL_GAIN = 1.2
@@ -40,8 +40,10 @@ class WallE(DriveBase):
 
     robot = DriveBase(left_motor, right_motor, wheel_diameter, axle_track)
 
-    def __init__():
-        super().__init__(left_motor, right_motor, wheel_diameter, axle_track)
+    def __init__(self):
+        super().__init__(
+            self.left_motor, self.right_motor, self.wheel_diameter, self.axle_track
+        )
 
     def seek_line(direction):
         if direction == "right":
