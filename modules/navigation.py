@@ -18,7 +18,6 @@ from pybricks.robotics import DriveBase
 class WallE(DriveBase):
     # Init sensors
     line_sensor = ColorSensor(Port.S1)
-    touch_sensor = TouchSensor(Port.S2)
     ultra_sensor = UltrasonicSensor(Port.S3)
     gyro_sensor = GyroSensor(Port.S4)
 
@@ -70,7 +69,7 @@ class WallE(DriveBase):
 
             self.robot.drive(self.DRIVE_SPEED, turn_rate)
 
-            if self.line_sensor.reflection() <= BLACK + 5:
+            if self.line_sensor.reflection() <= self.BLACK + 5:
                 self.robot.stop()
                 can_drive = False
         return
