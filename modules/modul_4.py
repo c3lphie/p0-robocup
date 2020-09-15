@@ -23,8 +23,8 @@ def run_module():
     # Spil Celine Dion "Titanic"
 
     # Kør frem til markør
-    while robot.line_sensor.reflection() >= BLACK + 5:
+    while robot.line_sensor.reflection() >= robot.BLACK + 5:
         robot.drive()
-        if robot.line_sensor.reflection() <= BLACK + 5:
+        if robot.line_sensor.reflection() <= robot.BLACK + 5:
             robot.stop()
             can_drive = False

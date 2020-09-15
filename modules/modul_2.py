@@ -5,7 +5,7 @@ robot = WallE()
 
 
 def run_module():
-    reset_angle(0)
+    robot.reset()
     robot.turn(45)
     robot.straight(100)
     robot.seek_line("right")

@@ -11,7 +11,7 @@ from pybricks.ev3devices import (
     UltrasonicSensor,
     GyroSensor,
 )
-from pybricks.parameters import Port
+from pybricks.parameters import Port, Stop
 from pybricks.robotics import DriveBase
 
 
@@ -47,13 +47,13 @@ class WallE(DriveBase):
     def seek_line(self, direction):
         if direction == "right":
             self.robot.turn(360)
-            if self.line_sensor.reflection() <= GREY + 5:
+            if self.line_sensor.reflection() <= self.GREY + 5:
                 self.robot.stop()
                 self.follow_line()
 
         elif direction == "left":
             self.robot.turn(-360)
-            if self.line_sensor.reflection() <= GREY + 5:
+            if self.line_sensor.reflection() <= self.GREY + 5:
                 self.robot.stop()
                 self.follow_line()
                 return True
@@ -75,9 +75,9 @@ class WallE(DriveBase):
         return
 
     def open_claw(self):
-        self.front_motor.run_until_stalled(100, then=Stop.HOLD, duty_limit=70)
+        self.front_motor.run_until_stalled(-300, then=Stop.HOLD, duty_limit=70)
         return
 
     def close_claw(self):
-        self.front_motor.run_until_stalled(-100, then=Stop.HOLD, duty_limit=70)
+        self.front_motor.run_until_stalled(300, then=Stop.HOLD, duty_limit=70)
         return
