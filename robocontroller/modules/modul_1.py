@@ -2,11 +2,10 @@
 from .navigation import WallE
 
 
-class module_1:
-    def run_module_1():
-        robot = WallE()
-        # Robotten skal følge linje til markør
-        robot.follow_line()
+def run_module_1():
+    robot = WallE()
+    # Robotten skal følge linje til markør
+    robot.line_follow()
 
 
 # musik valg: https://www.youtube.com/watch?v=9Gc4QTqslN4
