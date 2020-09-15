@@ -45,40 +45,40 @@ class WallE(DriveBase):
             self.left_motor, self.right_motor, self.wheel_diameter, self.axle_track
         )
 
-    def seek_line(direction):
+    def seek_line(self, direction):
         if direction == "right":
-            robot.turn(360)
-            if line_sensor.reflection() <= GREY + 5:
-                robot.stop()
-                follow_line()
+            self.robot.turn(360)
+            if self.line_sensor.reflection() <= GREY + 5:
+                self.robot.stop()
+                self.follow_line()
 
         elif direction == "left":
-            robot.turn(-360)
-            if line_sensor.reflection() <= GREY + 5:
-                robot.stop()
-                follow_line()
+            self.robot.turn(-360)
+            if self.line_sensor.reflection() <= GREY + 5:
+                self.robot.stop()
+                self.follow_line()
                 return True
         else:
             return False
 
-    def follow_line():
+    def follow_line(self):
         can_drive = True
         while can_drive:
-            deviation = line_sensor.reflection() - threshold
+            deviation = self.line_sensor.reflection() - self.threshold
 
-            turn_rate = PROPERTIONAL_GAIN * deviation
+            turn_rate = self.PROPERTIONAL_GAIN * deviation
 
-            robot.drive(DRIVE_SPEED, turn_rate)
+            self.robot.drive(self.DRIVE_SPEED, turn_rate)
 
-            if line_sensor.reflection() <= BLACK + 5:
-                robot.stop()
+            if self.line_sensor.reflection() <= BLACK + 5:
+                self.robot.stop()
                 can_drive = False
         return
 
-    def open_claw():
-        front_motor.run_until_stalled(100, then=Stop.HOLD, duty_limit=70)
+    def open_claw(self):
+        self.front_motor.run_until_stalled(100, then=Stop.HOLD, duty_limit=70)
         return
 
-    def close_claw():
-        front_motor.run_until_stalled(-100, then=Stop.HOLD, duty_limit=70)
+    def close_claw(self):
+        self.front_motor.run_until_stalled(-100, then=Stop.HOLD, duty_limit=70)
         return
