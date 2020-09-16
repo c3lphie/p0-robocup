@@ -16,11 +16,4 @@ def run_module():
 
     # køre frem til grå linje findes og følger den frem til markøren
 
-    move = True
-
-    while move:
-        if robot.line_sensor.reflection() <= GREY + 5:
-            robot.stop()
-            move = False
-        else:
-            robot.follow_line()
+    robot.seek_line("straight")

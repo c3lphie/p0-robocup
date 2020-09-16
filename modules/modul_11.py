@@ -29,14 +29,7 @@ def run_module():
 
     robot.turn(-90)
 
-    move2 = True
-
-    while move2:
-        if robot.line_sensor.reflection() <= GREY + 5:
-            robot.run(200)
-            move2 = False
-        else:
-            robot.follow_line()
+    robot.seek_line("straight")
 
     # Spil "Ronald Reagan speech - Mr. Gorbachev, tear down that wall" når robotten kører over muren
     # https://youtu.be/GCO9BYCGNeY?t=112
