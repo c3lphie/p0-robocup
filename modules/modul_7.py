@@ -9,6 +9,7 @@ robot = WallE()
 def run_module():
     GREYcount = 0
     SIDSTEFARVE = robot.line_sensor.reflection()
+    robot.straight(150)
     robot.turn(-45)
     while GREYcount <= 3:
         if SIDSTEFARVE != robot.GREY + 5:
