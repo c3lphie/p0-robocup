@@ -12,10 +12,12 @@ def run_module():
     # Åben klo
     robot.open_claw()
     # Følg linje til tryk sensor rammes
-    while robot.ultra_sensor.distance(silent=True):
+    can_drive = True
+    while can_drive:
         robot.drive()
-        if robot.ultra_sensor.distance() == 50:
+        if robot.ultra_sensor.distance() == 75:
             robot.stop
+            can_drive = False
     # luk klo
     robot.close_claw()
 
