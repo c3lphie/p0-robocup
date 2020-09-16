@@ -32,10 +32,10 @@ class WallE(DriveBase):
     BLACK = 6
     WHITE = 80
     GREY = 46
-    DRIVE_SPEED = 100
+    DRIVE_SPEED = 350
     PROPERTIONAL_GAIN = 1.2
 
-    threshold = (BLACK + WHITE + GREY) / 3
+    threshold = (WHITE + GREY) / 2
 
     robot = DriveBase(left_motor, right_motor, wheel_diameter, axle_track)
 
