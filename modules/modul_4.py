@@ -8,8 +8,7 @@ def run_module():
     # Drej 45 grader mod højre
     robot.turn(45)
     # Kør til grå streg rammes
-    robot.straight(200)
-    robot.seek_line("left")
+    robot.seek_line("straight")
     # Åben klo
     robot.open_claw()
     # Følg linje til tryk sensor rammes
@@ -25,6 +24,6 @@ def run_module():
     # Kør frem til markør
     while robot.line_sensor.reflection() >= robot.BLACK + 5:
         robot.drive()
-        if robot.line_sensor.reflection() <= robot.BLACK + 5:
+        if robot.line_sensor.reflection() in range(robot.BLACK - 5, robot.BLACK + 5):
             robot.stop()
             can_drive = False

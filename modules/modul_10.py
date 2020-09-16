@@ -19,7 +19,7 @@ def run_module():
     drive10 = True
     drive10_2 = False
     while drive10:
-        if robot.line_sensor.reflection() <= robot.GREY + 5:
+        if robot.line_sensor.reflection() in range(robot.GREY - 5, robot.GREY + 5):
             robot.turn(90)
             robot.wait(7500)
             drive10_2 = True
@@ -32,7 +32,7 @@ def run_module():
     while drive10_2:
         if robot.line_sensor.reflection() > robot.GREY + 10:
             robot.drive(500)
-        elif robot.line_sensor.reflection() <= robot.BLACK + 5:
+        elif robot.line_sensor.reflection() in range(robot.BLACK - 5, robot.BLACK + 5):
             drive10_2 = False
         else:
             robot.follow_line()
