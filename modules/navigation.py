@@ -65,11 +65,18 @@ class WallE(DriveBase):
         elif direction == "straight":
             can_drive = True
             while can_drive:
+<<<<<<< Updated upstream
                 self._drive(self.DRIVE_SPEED)
                 if self.line_sensor.reflection() in range(
                     self.GREY - self.i, self.GREY + self.i
                 ):
                     self._stop()
+=======
+                print("test")
+                self._drive(300)
+                if self.line_sensor.reflection() in range(self.GREY - i, self.GREY + i):
+                    self.robot.stop()
+>>>>>>> Stashed changes
                     can_drive = False
                     return True
 
