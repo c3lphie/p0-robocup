@@ -61,20 +61,19 @@ class WallE(DriveBase):
             ):
                 self.robot.stop()
                 return True
-
-        elif direction == "straight":
-            can_drive = True
-            while can_drive:
-                self._drive(self.DRIVE_SPEED)
-                if self.line_sensor.reflection() in range(
-                    self.GREY - self.i, self.GREY + self.i
-                ):
-                    self._stop()
-                    can_drive = False
-                    return True
-
         else:
             return False
+
+    def seek_line_straight(self):
+        can_drive = True
+        while can_drive:
+            self._drive(self.DRIVE_SPEED)
+            if self.line_sensor.reflection() in range(
+                self.GREY - self.i, self.GREY + self.i
+            ):
+                self._stop()
+                can_drive = False
+                return
 
     def _drive(self, speed):
         self.robot.stop()
