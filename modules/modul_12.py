@@ -16,4 +16,5 @@ def run_module():
 
     # køre frem til grå linje findes og følger den frem til markøren
 
-    robot.seek_line("straight")
+    robot.seek_line_straight()
+    robot.follow_line()

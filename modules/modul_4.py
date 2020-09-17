@@ -9,6 +9,8 @@ def run_module():
     robot.turn(45)
     # Kør til grå streg rammes
     robot.seek_line_straight()
+
+    robot.turn(-45)
     # Åben klo
     robot.open_claw()
     # Følg linje til tryk sensor rammes

@@ -20,6 +20,8 @@ def check_exit():
         if robot.light_sensor.reflection() in range(robot.GREY - 5, robot.GREY + 5):
             can_drive = False
             robot.follow_line()
+        else:
+            robot.turn(90)
 
     return
 

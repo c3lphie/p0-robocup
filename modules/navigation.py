@@ -70,21 +70,11 @@ class WallE(DriveBase):
         while can_drive:
             self.robot.drive(self.DRIVE_SPEED, turn_rate)
             if self.line_sensor.reflection() in range(
-                self.GREY - self.i, self.GREY + self.i):
+                self.GREY - self.i, self.GREY + self.i
+            ):
                 self.robot.stop()
                 can_drive = False
                 return
-
-    def _drive(self, speed):
-        self.robot.stop()
-        self.left_motor.run(speed)
-        self.right_motor.run(speed)
-        return
-
-    def _stop(self):
-        self.left_motor.stop()
-        self.right_motor.stop()
-        return
 
     def follow_line(self):
         can_drive = True

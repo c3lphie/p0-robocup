@@ -1,6 +1,9 @@
 #!/usr/bin/env pybricks-micropython
 from .navigation import WallE
+from pybricks.tools import wait
+from pybricks.hubs import EV3Brick
 
+ev3 = EV3Brick()
 robot = WallE()
 
 
