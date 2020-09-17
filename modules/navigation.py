@@ -32,7 +32,7 @@ class WallE(DriveBase):
     BLACK = 6
     WHITE = 80
     GREY = 46
-    DRIVE_SPEED = 350
+    DRIVE_SPEED = 300
     PROPERTIONAL_GAIN = 1.2
 
     threshold = (WHITE + GREY) / 2
@@ -59,14 +59,17 @@ class WallE(DriveBase):
                 return True
 
         elif direction == "straight":
-            can_drive = True
-            while can_drive:
+           can_drive = True
+           while can_drive:
                 self.robot.drive(self.DRIVE_SPEED)
                 if self.line_sensor.reflection() in range(self.GREY - 5, self.GREY + 5):
                     self.robot.stop()
                     self.follow_line()
                     can_drive = False
                     return True
+                else: 
+                    self.robot.drive(self.DRIVE_SPEED)
+
         else:
             return False
 
