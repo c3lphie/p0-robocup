@@ -7,5 +7,7 @@ robot = WallE()
 
 def run_module():
     robot.turn(-45)
-    robot.seek_line("straight")
+    robot.straight(100)
+    robot.seek_line_straight()
+    robot.turn(45)
     robot.follow_line()

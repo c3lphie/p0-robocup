@@ -31,9 +31,9 @@ class WallE(DriveBase):
     wheel_diameter = 47.56
     axle_track = 100
     BLACK = 6
-    WHITE = 80
-    GREY = 46
-    DRIVE_SPEED = 300
+    WHITE = 91
+    GREY = 55
+    DRIVE_SPEED = 150
     PROPERTIONAL_GAIN = 1.2
 
     threshold = (WHITE + GREY) / 2
@@ -66,12 +66,12 @@ class WallE(DriveBase):
 
     def seek_line_straight(self):
         can_drive = True
+        turn_rate = 0
         while can_drive:
-            self._drive(self.DRIVE_SPEED)
+            self.robot.drive(self.DRIVE_SPEED, turn_rate)
             if self.line_sensor.reflection() in range(
-                self.GREY - self.i, self.GREY + self.i
-            ):
-                self._stop()
+                self.GREY - self.i, self.GREY + self.i):
+                self.robot.stop()
                 can_drive = False
                 return
 
