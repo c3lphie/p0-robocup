@@ -27,6 +27,7 @@ class WallE(DriveBase):
     front_motor = Motor(Port.C)
 
     # Constants
+    i = 5
     wheel_diameter = 47.56
     axle_track = 100
     BLACK = 6
@@ -47,29 +48,37 @@ class WallE(DriveBase):
     def seek_line(self, direction):
         if direction == "right":
             self.robot.turn(360)
-            if self.line_sensor.reflection() in range(self.GREY - 5, self.GREY + 5):
+            if self.line_sensor.reflection() in range(self.GREY - i, self.GREY + i):
                 self.robot.stop()
-                self.follow_line()
                 return True
 
         elif direction == "left":
             self.robot.turn(-360)
-            if self.line_sensor.reflection() in range(self.GREY - 5, self.GREY + 5):
+            if self.line_sensor.reflection() in range(self.GREY - i, self.GREY + i):
                 self.robot.stop()
-                #self.follow_line()
                 return True
 
         elif direction == "straight":
-           can_drive = True
-           while can_drive:
-                self.robot.drive(self.DRIVE_SPEED)
-                if self.line_sensor.reflection() in range(self.GREY - 10, self.GREY + 10):
-                    self.robot.stop()
+            can_drive = True
+            while can_drive:
+                self._drive(self.DRIVE_SPEED)
+                if self.line_sensor.reflection() in range(self.GREY - i, self.GREY + i):
+                    self._stop()
                     can_drive = False
                     return True
 
         else:
             return False
+
+    def _drive(self, speed):
+        self.left_motor.run(speed)
+        self.right_motor.run(speed)
+        return
+
+    def _stop(self):
+        self.left_motor.stop()
+        self.right_motor.stop()
+        return
 
     def follow_line(self):
         can_drive = True
