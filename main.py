@@ -20,4 +20,5 @@ def run():
     return
 
 if __name__ == "__main__":
-    run()
+   # run() 
+   modul_2.run_module()
