@@ -48,13 +48,17 @@ class WallE(DriveBase):
     def seek_line(self, direction):
         if direction == "right":
             self.robot.turn(360)
-            if self.line_sensor.reflection() in range(self.GREY - i, self.GREY + i):
+            if self.line_sensor.reflection() in range(
+                self.GREY - self.i, self.GREY + self.i
+            ):
                 self.robot.stop()
                 return True
 
         elif direction == "left":
             self.robot.turn(-360)
-            if self.line_sensor.reflection() in range(self.GREY - i, self.GREY + i):
+            if self.line_sensor.reflection() in range(
+                self.GREY - self.i, self.GREY + self.i
+            ):
                 self.robot.stop()
                 return True
 
@@ -62,7 +66,9 @@ class WallE(DriveBase):
             can_drive = True
             while can_drive:
                 self._drive(self.DRIVE_SPEED)
-                if self.line_sensor.reflection() in range(self.GREY - i, self.GREY + i):
+                if self.line_sensor.reflection() in range(
+                    self.GREY - self.i, self.GREY + self.i
+                ):
                     self._stop()
                     can_drive = False
                     return True
@@ -71,6 +77,7 @@ class WallE(DriveBase):
             return False
 
     def _drive(self, speed):
+        self.robot.stop()
         self.left_motor.run(speed)
         self.right_motor.run(speed)
         return
