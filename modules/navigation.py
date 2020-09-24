@@ -27,34 +27,44 @@ class WallE(DriveBase):
     front_motor = Motor(Port.C)
 
     # Constants
-    i = 5
-    wheel_diameter = 47.56
-    axle_track = 100
-    BLACK = 6
+    i = 5   # Konstant der bliver brugt til at skabe interval i range funktionen
+    wheel_diameter = 47.56 
+    axle_track = 100    # Afstand mellem to aksler, i mm
+
+    # BLACK, WHITE, GREY er definition af lysniveauet som sensoren måler
+    BLACK = 6   
     WHITE = 91
     GREY = 55
+
+    # Motorens hastighed i grader per sekund
     DRIVE_SPEED = 150
-    PROPERTIONAL_GAIN = 1.2
-    PROPERTIONAL_GAIN2 = -1.2
 
-    threshold = (WHITE + GREY) / 2
+    # En faktor der ganges på forskellige værdier
+    PROPORTIONAL_GAIN = 1.2     
+    PROPORTIONAL_GAIN2 = -1.2
 
-    robot = DriveBase(left_motor, right_motor, wheel_diameter, axle_track)
+    # Farve threshold
+    threshold = (WHITE + GREY) / 2 
 
-    def __init__(self):
+    # Forklar kort
+    robot = DriveBase(left_motor, right_motor, wheel_diameter, axle_track) 
+
+    # Få Simon til at forklare super, self. Initialisering af motor
+    def __init__(self): # Få Simon til at forklare (self), forklaring af classes
         super().__init__(
             self.left_motor, self.right_motor, self.wheel_diameter, self.axle_track
         )
 
+    # Funktion der får robotten til at søge linjen - få lige en gennemgang af Simon
     def seek_line(self, direction):
-        if direction == "right":
+        if direction == "right": 
             self.robot.turn(360)
             if self.line_sensor.reflection() in range(
                 self.GREY - self.i, self.GREY + self.i
             ):
                 self.robot.stop()
                 return True
-
+    
         elif direction == "left":
             self.robot.turn(-360)
             if self.line_sensor.reflection() in range(
@@ -82,7 +92,7 @@ class WallE(DriveBase):
         while can_drive:
             deviation = self.line_sensor.reflection() - self.threshold
 
-            turn_rate = self.PROPERTIONAL_GAIN * deviation
+            turn_rate = self.PROPORTIONAL_GAIN * deviation
 
             self.robot.drive(self.DRIVE_SPEED, turn_rate)
 
@@ -96,7 +106,7 @@ class WallE(DriveBase):
         while can_drive:
             deviation = self.line_sensor.reflection() - self.threshold
 
-            turn_rate = self.PROPERTIONAL_GAIN2 * deviation
+            turn_rate = self.PROPORTIONAL_GAIN2 * deviation
 
             self.robot.drive(self.DRIVE_SPEED, turn_rate)
 
