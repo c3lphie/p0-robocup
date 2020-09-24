@@ -30,12 +30,12 @@ class WallE(DriveBase):
     i = 5
     wheel_diameter = 47.56
     axle_track = 100
-    BLACK = 6
-    WHITE = 91
-    GREY = 55
+    BLACK = 10
+    WHITE = 90
+    GREY = 50
     DRIVE_SPEED = 150
-    PROPERTIONAL_GAIN = 1.2
-    PROPERTIONAL_GAIN2 = -1.2
+    PROPERTIONAL_GAIN = 1.7
+    PROPERTIONAL_GAIN2 = -1.7
 
     threshold = (WHITE + GREY) / 2
 
