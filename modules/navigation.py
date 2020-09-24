@@ -35,6 +35,7 @@ class WallE(DriveBase):
     GREY = 55
     DRIVE_SPEED = 150
     PROPERTIONAL_GAIN = 1.2
+    PROPERTIONAL_GAIN2 = -1.2
 
     threshold = (WHITE + GREY) / 2
 
@@ -82,6 +83,20 @@ class WallE(DriveBase):
             deviation = self.line_sensor.reflection() - self.threshold
 
             turn_rate = self.PROPERTIONAL_GAIN * deviation
+
+            self.robot.drive(self.DRIVE_SPEED, turn_rate)
+
+            if self.line_sensor.reflection() in range(self.BLACK - 5, self.BLACK + 5):
+                self.robot.stop()
+                can_drive = False
+        return
+
+    def follow_lineR2L(self):
+        can_drive = True
+        while can_drive:
+            deviation = self.line_sensor.reflection() - self.threshold
+
+            turn_rate = self.PROPERTIONAL_GAIN2 * deviation
 
             self.robot.drive(self.DRIVE_SPEED, turn_rate)
 
