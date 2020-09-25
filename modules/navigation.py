@@ -26,13 +26,13 @@ class WallE(DriveBase):
     right_motor = Motor(Port.B)
     front_motor = Motor(Port.C)
 
-    # Constants
-    i = 5   # Konstant der bliver brugt til at skabe interval i range funktionen
-    wheel_diameter = 47.56 
-    axle_track = 100    # Afstand mellem to aksler, i mm
+    # CONSTANTS
+    i = 5  # Konstant der bliver brugt til at skabe interval i range funktionen
+    wheel_diameter = 47.56
+    axle_track = 100  # Afstand mellem to aksler, i mm
 
     # BLACK, WHITE, GREY er definition af lysniveauet som sensoren måler
-    BLACK = 6   
+    BLACK = 6
     WHITE = 91
     GREY = 55
 
@@ -40,33 +40,41 @@ class WallE(DriveBase):
     DRIVE_SPEED = 150
 
     # En faktor der ganges på forskellige værdier
-    PROPORTIONAL_GAIN = 1.2     
+    PROPORTIONAL_GAIN = 1.2
     PROPORTIONAL_GAIN2 = -1.2
 
     # Farve threshold
-    threshold = (WHITE + GREY) / 2 
+    threshold = (WHITE + GREY) / 2
 
     # Forklar kort
-    robot = DriveBase(left_motor, right_motor, wheel_diameter, axle_track) 
+    robot = DriveBase(left_motor, right_motor, wheel_diameter, axle_track)
 
-    # Få Simon til at forklare super, self. Initialisering af motor
-    def __init__(self): # Få Simon til at forklare (self), forklaring af classes
+    # Her sættes vores variabler ind så vi kan bruge funktionerne fra drivebase gennem vores klasse.
+    def __init__(
+        self,
+    ):  # "self" repræsentere WallE, men så det kan bruges inde i klassen
+        # "super()" er en placeholder for DriveBase klassen
         super().__init__(
             self.left_motor, self.right_motor, self.wheel_diameter, self.axle_track
         )
 
-    # Funktion der får robotten til at søge linjen - få lige en gennemgang af Simon
+    # Funktion der får robotten til at søge linjen
     def seek_line(self, direction):
-        if direction == "right": 
+        # Først tjekkes hvad der er givet som argument
+        if direction == "right":
+            # Sætter robotten til at dreje mod højre
             self.robot.turn(360)
+            # Tjekker om værdien for farvesensoren er inden for range
             if self.line_sensor.reflection() in range(
                 self.GREY - self.i, self.GREY + self.i
             ):
                 self.robot.stop()
                 return True
-    
+        # Tjekker om argument er lig venstre
         elif direction == "left":
+            # Sætter robotten til at dreje mod venstre
             self.robot.turn(-360)
+            # Tjekker om værdien for farvesensoren er inden for range
             if self.line_sensor.reflection() in range(
                 self.GREY - self.i, self.GREY + self.i
             ):
@@ -75,11 +83,14 @@ class WallE(DriveBase):
         else:
             return False
 
+    # Funktionen der får robotten til at søge ligeud efter linjen
     def seek_line_straight(self):
         can_drive = True
         turn_rate = 0
+        # Sætter robotten til at køre
         while can_drive:
             self.robot.drive(self.DRIVE_SPEED, turn_rate)
+            # Tjekker om værdien for farvesensoren er inden for range
             if self.line_sensor.reflection() in range(
                 self.GREY - self.i, self.GREY + self.i
             ):
@@ -87,29 +98,37 @@ class WallE(DriveBase):
                 can_drive = False
                 return
 
+    # Funktion for at følge linjen
     def follow_line(self):
         can_drive = True
         while can_drive:
+            # Beregn afvigelse
             deviation = self.line_sensor.reflection() - self.threshold
 
+            # Beregn turn_rate baseret på afvigelsen
             turn_rate = self.PROPORTIONAL_GAIN * deviation
 
             self.robot.drive(self.DRIVE_SPEED, turn_rate)
 
+            # Tjekker om værdien for farvesensoren er inden for range
             if self.line_sensor.reflection() in range(self.BLACK - 5, self.BLACK + 5):
                 self.robot.stop()
                 can_drive = False
         return
 
+    # Funktionen for at følge linjen fra venstre
     def follow_lineR2L(self):
         can_drive = True
         while can_drive:
+            # Beregn afvigelse
             deviation = self.line_sensor.reflection() - self.threshold
 
+            # Beregn turn_rate baseret på afvigelsen
             turn_rate = self.PROPORTIONAL_GAIN2 * deviation
 
             self.robot.drive(self.DRIVE_SPEED, turn_rate)
 
+            # Tjekker om værdien for farvesensoren er inden for range
             if self.line_sensor.reflection() in range(self.BLACK - 5, self.BLACK + 5):
                 self.robot.stop()
                 can_drive = False
