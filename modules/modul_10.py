@@ -23,13 +23,13 @@ def run_module():
             drive10_2 = True
             drive10 = False
         else:
-            robot.drive(300)
+            robot.drive(300, 0)
 
     # Kør frem til grå linje rammes
 
     while drive10_2:
         if robot.line_sensor.reflection() > robot.GREY + 10:
-            robot.drive(300)
+            robot.drive(300, 0)
         elif robot.line_sensor.reflection() in range(robot.BLACK - 5, robot.BLACK + 5):
             drive10_2 = False
         else:

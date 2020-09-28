@@ -15,7 +15,7 @@ def run_module():
         if SIDSTEFARVE != robot.GREY + 5:
             SIDSTEFARVE = robot.line_sensor.reflection()
             GREYcount += 1
-            robot.drive()
+            robot.drive(robot.DRIVE_SPEED, 0)
     robot.follow_line()
 
 
