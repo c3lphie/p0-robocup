@@ -9,7 +9,7 @@ robot = WallE()
 
 def run_module():
     move = True
-    move = False
+    move2 = False
 
     # kør frem til hvid rammes
     while move:
@@ -25,7 +25,7 @@ def run_module():
     # kør frem til afstands måler viser forrige svar
     move2 = True
 
-    while move:
+    while move2:
         Distance_measured = robot.distance()
         if Distance_measured == Afstand_stop:
             robot.stop()
