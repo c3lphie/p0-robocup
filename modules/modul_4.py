@@ -1,6 +1,6 @@
 #!/usr/bin/env pybricks-micropython
 from .navigation import WallE
-
+from pybricks.tools import wait
 robot = WallE()
 
 
@@ -8,9 +8,10 @@ def run_module():
     # Drej 45 grader mod højre
     robot.turn(45)
     # Kør til grå streg rammes
-    robot.seek_line_straight()
-
-    robot.turn(-45)
+    robot.straight(100)
+    robot.turn(70)
+    robot.DRIVE_SPEED = 100
+    robot.follow_lineR2L()
     # Åben klo
     robot.open_claw()
     # Følg linje til tryk sensor rammes
@@ -18,7 +19,7 @@ def run_module():
     while can_drive:
         robot.drive()
         if robot.ultra_sensor.distance() <= 59:
-            robot.stop
+            robot.stop()
             can_drive = False
     # luk klo
     robot.close_claw()
