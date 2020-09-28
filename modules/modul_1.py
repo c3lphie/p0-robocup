@@ -6,6 +6,7 @@ from .navigation import WallE
 def run_module():
     robot = WallE()
     # Robotten skal følge linje til markør
+    robot.straight(100)
     robot.follow_line()
 
 
