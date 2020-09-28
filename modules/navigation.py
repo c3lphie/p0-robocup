@@ -34,9 +34,9 @@ class WallE(DriveBase):
     axle_track = 100  # Afstand mellem to aksler, i mm
 
     # BLACK, WHITE, GREY er definition af lysniveauet som sensoren måler
-    BLACK = 10
-    WHITE = 98
-    GREY = 40
+    BLACK = 12
+    WHITE = 100
+    GREY = 68
 
     # Motorens hastighed i grader per sekund
     DRIVE_SPEED = 150

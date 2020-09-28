@@ -27,6 +27,7 @@ def run_module():
             can_drive = False
     # luk klo
     robot.close_claw()
+    robot.straight(100)
     robot.turn(10)
     # Spil Celine Dion "Titanic"
 
