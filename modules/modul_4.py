@@ -17,7 +17,7 @@ def run_module():
     can_drive = True
     while can_drive:
         robot.drive()
-        if robot.ultra_sensor.distance() == 75:
+        if robot.ultra_sensor.distance() <= 59:
             robot.stop
             can_drive = False
     # luk klo

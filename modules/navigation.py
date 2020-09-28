@@ -4,6 +4,8 @@
 # This is the module used to make the robot follow the line,
 # and other smart navigation related functions.
 # ==========================================================
+
+# Importing modules
 from pybricks.ev3devices import (
     Motor,
     ColorSensor,
@@ -41,7 +43,6 @@ class WallE(DriveBase):
 
     # En faktor der ganges på forskellige værdier
     PROPORTIONAL_GAIN = 1.2
-    PROPORTIONAL_GAIN2 = -1.2
 
     # Farve threshold
     threshold = (WHITE + GREY) / 2
@@ -108,6 +109,7 @@ class WallE(DriveBase):
             # Beregn turn_rate baseret på afvigelsen
             turn_rate = self.PROPORTIONAL_GAIN * deviation
 
+            # Kør robot
             self.robot.drive(self.DRIVE_SPEED, turn_rate)
 
             # Tjekker om værdien for farvesensoren er inden for range
@@ -124,8 +126,9 @@ class WallE(DriveBase):
             deviation = self.line_sensor.reflection() - self.threshold
 
             # Beregn turn_rate baseret på afvigelsen
-            turn_rate = self.PROPORTIONAL_GAIN2 * deviation
+            turn_rate = -self.PROPORTIONAL_GAIN * deviation
 
+            # Kør robot
             self.robot.drive(self.DRIVE_SPEED, turn_rate)
 
             # Tjekker om værdien for farvesensoren er inden for range
