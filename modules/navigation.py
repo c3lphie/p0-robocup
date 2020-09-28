@@ -49,6 +49,7 @@ class WallE(DriveBase):
 
     # Forklar kort
     robot = DriveBase(left_motor, right_motor, wheel_diameter, axle_track)
+    robot.settings(DRIVE_SPEED, 20, 50, 20)
 
     # Her sættes vores variabler ind så vi kan bruge funktionerne fra drivebase gennem vores klasse.
     def __init__(
@@ -138,9 +139,9 @@ class WallE(DriveBase):
         return
 
     def open_claw(self):
-        self.front_motor.run_until_stalled(-300, then=Stop.HOLD, duty_limit=55)
+        self.front_motor.run_until_stalled(-300, then=Stop.HOLD, duty_limit=50)
         return
 
     def close_claw(self):
-        self.front_motor.run_until_stalled(300, then=Stop.HOLD, duty_limit=70)
+        self.front_motor.run_until_stalled(300, then=Stop.HOLD, duty_limit=65)
         return

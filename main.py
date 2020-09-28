@@ -1,8 +1,8 @@
 #!/usr/bin/env pybricks-micropython 
-from modules import modul_1, modul_2, modul_3, modul_4, modul_5, modul_6, modul_7, modul_8, modul_8, modul_9, modul_10, modul_11, modul_12, modul_13
+from modules import modul_1, modul_2, modul_3, modul_4, modul_5, modul_6, modul_7, modul_8, modul_8, modul_9, modul_10, modul_11, modul_12, modul_13, navigation
 from pybricks.tools import wait
 
-wait(5000)
+wait(2000)
 def run():
     #modul_1.run_module()
     #modul_2.run_module()
@@ -21,4 +21,9 @@ def run():
 
 if __name__ == "__main__":
     run() 
+    robot = navigation.WallE()
+
+    #robot.close_claw()
+    #wait(100)
+    #robot.open_claw()
 
