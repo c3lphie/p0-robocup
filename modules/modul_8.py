@@ -1,71 +1,47 @@
 #!/usr/bin/env pybricks-micropython
 from .navigation import WallE
 from pybricks.tools import wait
+from pybricks.hubs import EV3Brick
 
+ev3 = EV3Brick()
 robot = WallE()
-radius = 5000
-
-
-def check_exit():
-    can_drive = True
-    while can_drive:
-        deviation = robot.line_sensor.reflection() - robot.threshold
-
-        turn_rate = robot.PROPERTIONAL_GAIN * deviation
-
-        robot.drive(100, turn_rate)
-        wait(100)
-        robot.stop()
-        robot.turn(-90)
-        if robot.light_sensor.reflection() in range(robot.GREY - 5, robot.GREY + 5):
-            can_drive = False
-            robot.follow_line()
-        else:
-            robot.turn(90)
-
-    return
-
-
-def find_flask():
-    can_drive = True
-    while can_drive:
-        robot.turn(-90)
-        if robot.ultra_sensor.distance() <= radius + 10:
-            robot.stop()
-            can_drive = False
-            return
 
 
 def run_module():
-    robot.turn(-45)
-    can_drive = True
-    while can_drive:
-        robot.drive(100)
-        if robot.line_sensor.reflection() <= robot.GREY:
-            robot.follow_line()
-            robot.drive(100)
-            if robot.line_sensor.reflection() <= robot.WHITE:
-                robot.stop()
+    # Kør frem til cirkel fra modul start
+    robot.turn(45)
+    robot.straight(200)
+    robot.seek_line("left")
+    robot.follow_line()
 
-        robot.straight(radius)
-        find_flask()
-        robot.open_claw()
-        robot.reset()
-        robot.drive()
-        if robot.ultra_sensor.distance() == 50:
-            robot.stop()
-            robot.close_claw()
+    # Kør til centrum
+    i = 0
+    max_lines = 3
+    while i < max_lines:
+        robot.drive(-robot.DRIVE_SPEED, 0)
+        if robot.line_sensor.reflection() in range(robot.GREY - 5, robot.GREY + 5):
+            i += 1
+            print(i)
+            ev3.screen.print(i)
+            if i == max_lines:
+                robot.stop
 
-        robot.straight((-1) * radius)
-        robot.open_claw()
-        robot.straight((-1) * radius)
+    # Sæt flaske
+    robot.open_claw()
 
-        robot.turn(-360)
-        if line_sensor.reflection() in range(robot.GREY - 5, robot.GREY + 5):
-            robot.stop()
-            robot.close_claw()
+    # Bak til grå
+    i = 0
+    max_lines = 3
+    while i < max_lines:
+        robot.drive(-robot.DRIVE_SPEED, 0)
+        if robot.line_sensor.reflection() in range(robot.GREY - 5, robot.GREY + 5):
+            i += 1
+            if i == max_lines:
+                robot.stop
 
-        check_exit()
+    robot.turn(180)
+    robot.follow_line()
+
     return
 
 

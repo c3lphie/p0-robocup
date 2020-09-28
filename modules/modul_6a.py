@@ -1,6 +1,7 @@
 #!/usr/bin/env pybricks-micropython
 from .navigation import WallE
 from pybricks.tools import wait
+
 robot = WallE()
 
 
@@ -18,12 +19,17 @@ def run_module():
 
     robot.close_claw()
 
-    can_drive = True
-    while can_drive:
-        angle = robot.gyro_sensor.angle()
-        robot.drive(get_speed_by_angle(angle),0)
-        if robot.line_sensor.reflection() >= robot.WHITE:
-            robot.stop()
-            can_drive = False
+    # can_drive = True
+    # while can_drive:
+    #     angle = robot.gyro_sensor.angle()
+    #     robot.drive(get_speed_by_angle(angle),0)
+    #     if robot.line_sensor.reflection() >= robot.WHITE:
+    #         robot.stop()
+    #         can_drive = False
+
+    robot.follow_line()
+    if robot.line_sensor.reflection() in range(robot.WHITE - 5, robot.WHITE + 5):
+        robot.stop()
 
     robot.seek_line("left")
+    robot.follow_line()
