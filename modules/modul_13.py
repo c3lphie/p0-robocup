@@ -32,7 +32,7 @@ def run_module():
             robot.stop()
             move2 = False
         else:
-            robot.drive(robot.DRIVE_SPEED,0)
+            robot.follow_line
 
     # stop
     # Afspil we are the champions
