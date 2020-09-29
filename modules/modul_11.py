@@ -32,5 +32,13 @@ def run_module():
     robot.seek_line_straight()
     robot.follow_line()
 
+
+    # ny kode for alternativ løsning
+    #robot.straight(200)
+    #robot.turn(30)
+    #robot.straight(400)
+    #robot.turn(-100)
+    #seek_line_straight
+
     # Spil "Ronald Reagan speech - Mr. Gorbachev, tear down that wall" når robotten kører over muren
     # https://youtu.be/GCO9BYCGNeY?t=112

@@ -13,7 +13,7 @@ def run():
     #modul_7.run_module()
     #modul_8.run_module()
     #modul_9.run_module()
-    #modul_10.run_module()
+    modul_10.run_module()
     #modul_11.run_module()
     #modul_12.run_module()
     #modul_13.run_module()

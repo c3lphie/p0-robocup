@@ -35,8 +35,13 @@ class WallE(DriveBase):
 
     # BLACK, WHITE, GREY er definition af lysniveauet som sensoren måler
     BLACK = 10
-    WHITE = 96
-    GREY = 41
+    WHITE = 100
+    GREY = 48
+
+    # Testbanens værdier
+    #BLACK = 12
+    #WHITE = 100
+    #GREY = 68
 
     # Motorens hastighed i grader per sekund
     DRIVE_SPEED = 150
@@ -139,9 +144,9 @@ class WallE(DriveBase):
         return
 
     def open_claw(self):
-        self.front_motor.run_until_stalled(-300, then=Stop.HOLD, duty_limit=45)
+        self.front_motor.run_until_stalled(-600, then=Stop.HOLD, duty_limit=40)
         return
 
     def close_claw(self):
-        self.front_motor.run_until_stalled(300, then=Stop.HOLD, duty_limit=75)
+        self.front_motor.run_until_stalled(300, then=Stop.HOLD, duty_limit=70)
         return
