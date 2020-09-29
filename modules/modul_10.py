@@ -13,6 +13,7 @@ robot = WallE()
 def run_module():
     # Start med at dreje -45 grader for at vende mod tredje moduls gråstreg
     robot.turn(-45)
+    robot.straight(100)
 
     # Robotten kører ligeud indtil farven under den skifter til grå og drejer derefter 90 grader den anden vej
     drive10 = True
@@ -26,14 +27,8 @@ def run_module():
             robot.drive(300, 0)
 
     # Kør frem til grå linje rammes
-
-    while drive10_2:
-        if robot.line_sensor.reflection() > robot.GREY + 10:
-            robot.drive(300, 0)
-        elif robot.line_sensor.reflection() in range(robot.BLACK - 5, robot.BLACK + 5):
-            drive10_2 = False
-        else:
-            robot.follow_line()
+    robot.straight(100)
+    robot.seek_line_straight()
 
     # Følg linjen indtil den skifter til sort
     robot.follow_line()
