@@ -6,24 +6,23 @@ robot = WallE()
 
 def run_module():
     # køre frem til 10 cm til mur
-    robot.straight(150)
+    robot.straight(600)
 
     # drejer 45 grader mod venstre
-    robot.turn(-45)
+    robot.turn(-60)
 
     # måler afstanden til muren og bevæger sig frem til 10 cm før muren.
     move = True
-
     while move:
-        if robot.ultra_sensor.distance() <= 100:
-            robot.run(200)
+        robot.drive(robot.DRIVE_SPEED,0)
+        if robot.ultra_sensor.distance() <= 150:
             move = False
     robot.stop()
 
     # robotten drejer 90 grader mod højre og køre 30 cm frem.
 
-    robot.turn(90)
-    robot.straight(300)
+    robot.turn(115)
+    robot.straight(600)
 
     # drejer 90 grader mod venstre, søger efter grå linje og følger den.
 

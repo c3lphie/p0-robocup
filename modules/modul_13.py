@@ -13,25 +13,26 @@ def run_module():
 
     # kør frem til hvid rammes
     while move:
-        robot.straight(50)
+        robot.straight(500)
         robot.reset()
+        move = False
 
     # mål afstand til væg
-    Afstand = robot.ultra_sensor.distance()
+    #Afstand = robot.ultra_sensor.distance()
 
     # del afstand med to
-    Afstand_stop = Afstand / 2
+    #Afstand_stop = Afstand / 2
 
     # kør frem til afstands måler viser forrige svar
     move2 = True
 
     while move2:
         Distance_measured = robot.distance()
-        if Distance_measured == Afstand_stop:
+        if Distance_measured == 1000:
             robot.stop()
             move2 = False
         else:
-            robot.drive()
+            robot.drive(robot.DRIVE_SPEED,0)
 
     # stop
     # Afspil we are the champions
