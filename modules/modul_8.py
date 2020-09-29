@@ -18,7 +18,7 @@ def run_module():
     i = 0
     max_lines = 3
     while i < max_lines:
-        robot.drive(-robot.DRIVE_SPEED, 0)
+        robot.drive(robot.DRIVE_SPEED, 0)
         if robot.line_sensor.reflection() in range(robot.GREY - 5, robot.GREY + 5):
             i += 1
             print(i)
@@ -31,7 +31,6 @@ def run_module():
 
     # Bak til grå
     i = 0
-    max_lines = 3
     while i < max_lines:
         robot.drive(-robot.DRIVE_SPEED, 0)
         if robot.line_sensor.reflection() in range(robot.GREY - 5, robot.GREY + 5):
