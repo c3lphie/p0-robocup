@@ -34,9 +34,9 @@ class WallE(DriveBase):
     axle_track = 100  # Afstand mellem to aksler, i mm
 
     # BLACK, WHITE, GREY er definition af lysniveauet som sensoren måler
-    BLACK = 12
-    WHITE = 100
-    GREY = 68
+    BLACK = 10
+    WHITE = 96
+    GREY = 41
 
     # Motorens hastighed i grader per sekund
     DRIVE_SPEED = 150
@@ -139,9 +139,9 @@ class WallE(DriveBase):
         return
 
     def open_claw(self):
-        self.front_motor.run_until_stalled(-600, then=Stop.HOLD, duty_limit=40)
+        self.front_motor.run_until_stalled(-300, then=Stop.HOLD, duty_limit=45)
         return
 
     def close_claw(self):
-        self.front_motor.run_until_stalled(300, then=Stop.HOLD, duty_limit=70)
+        self.front_motor.run_until_stalled(300, then=Stop.HOLD, duty_limit=75)
         return

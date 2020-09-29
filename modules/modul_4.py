@@ -11,7 +11,7 @@ def run_module():
     # Kør til grå streg rammes
     robot.straight(50)
     robot.seek_line_straight()
-    while robot.ultra_sensor.distance()>=400:
+    while robot.ultra_sensor.distance()>=500:
         robot.turn(5)
     robot.stop
     robot.turn(35)
@@ -19,6 +19,7 @@ def run_module():
     # robot.follow_lineR2L()
     # # Åben klo
     # Følg linje til tryk sensor rammes
+    
     can_drive = True
     while can_drive:
         robot.drive(robot.DRIVE_SPEED, 0)
@@ -27,8 +28,9 @@ def run_module():
             can_drive = False
     # luk klo
     robot.close_claw()
-    robot.straight(100)
+    robot.stop()
     robot.turn(10)
+    robot.straight(250)
     # Spil Celine Dion "Titanic"
 
     # Kør frem til markør
