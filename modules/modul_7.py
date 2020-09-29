@@ -17,8 +17,8 @@ def run_module():
         robot.drive(robot.DRIVE_SPEED, 0)
         if SIDSTEFARVE in range(robot.GREY - 5, robot.GREY + 5):
             GREYcount += 1
-            if GREYcount == 3
-            robot.stop()
+            if GREYcount == 3:
+                robot.stop
     robot.straight(100)
     robot.turn(45)        
     robot.follow_line()
