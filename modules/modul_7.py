@@ -19,6 +19,7 @@ def run_module():
             GREYcount += 1
             if GREYcount == 3:
                 robot.stop
+                return
     robot.straight(100)
     robot.turn(45)        
     robot.follow_line()

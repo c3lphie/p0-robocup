@@ -5,6 +5,7 @@ robot = WallE()
 
 
 def run_module():
+    robot.close_claw()
     robot.open_claw()
     # Drej 45 grader mod højre
     robot.turn(45)
