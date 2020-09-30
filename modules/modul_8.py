@@ -17,7 +17,7 @@ def run_module():
 
     # Kør til centrum
     i = 0
-    max_lines = 3
+    max_lines = 5
     while i < max_lines:
         robot.drive(robot.DRIVE_SPEED, 0)
         if robot.line_sensor.reflection() in range(robot.GREY - 5, robot.GREY + 5):
