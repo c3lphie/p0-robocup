@@ -67,26 +67,32 @@ class WallE(DriveBase):
 
     # Funktion der får robotten til at søge linjen
     def seek_line(self, direction):
+        can_drive = True
+        turn_int = 5
         # Først tjekkes hvad der er givet som argument
         if direction == "right":
             # Sætter robotten til at dreje mod højre
-            self.robot.turn(360)
-            # Tjekker om værdien for farvesensoren er inden for range
-            if self.line_sensor.reflection() in range(
-                self.GREY - self.i, self.GREY + self.i
-            ):
-                self.robot.stop()
-                return True
+            while can_drive:
+                self.robot.turn(turn_int)
+                # Tjekker om værdien for farvesensoren er inden for range
+                if self.line_sensor.reflection() in range(
+                    self.GREY - self.i, self.GREY + self.i
+                ):
+                    self.robot.stop()
+                    can_drive = False
+                    return True
         # Tjekker om argument er lig venstre
         elif direction == "left":
             # Sætter robotten til at dreje mod venstre
-            self.robot.turn(-360)
-            # Tjekker om værdien for farvesensoren er inden for range
-            if self.line_sensor.reflection() in range(
-                self.GREY - self.i, self.GREY + self.i
-            ):
-                self.robot.stop()
-                return True
+            while can_drive:
+                self.robot.turn(-turn_int)
+                # Tjekker om værdien for farvesensoren er inden for range
+                if self.line_sensor.reflection() in range(
+                    self.GREY - self.i, self.GREY + self.i
+                ):
+                    self.robot.stop()
+                    can_drive = False
+                    return True
         else:
             return False
 
