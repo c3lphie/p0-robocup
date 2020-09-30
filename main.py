@@ -4,11 +4,11 @@ from pybricks.tools import wait
 
 wait(1000)
 def run():
-    #modul_1.run_module()
-    #modul_2.run_module()
-    #modul_3.run_module()
+    modul_1.run_module()
+    modul_2.run_module()
+    modul_3.run_module()
     modul_4.run_module()
-    #modul_5.run_module()
+    modul_5.run_module()
     #modul_6a.run_module()
     #modul_7.run_module()
     #modul_8.run_module()
