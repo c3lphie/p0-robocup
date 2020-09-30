@@ -28,7 +28,7 @@ def run_module():
 
     while move2:
         Distance_measured = robot.distance()
-        if Distance_measured == 1000:
+        if Distance_measured == 1350:
             robot.stop()
             move2 = False
         else:

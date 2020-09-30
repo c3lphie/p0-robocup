@@ -9,7 +9,7 @@ robot = WallE()
 
 def run_module():
     # Kør frem til cirkel fra modul start
-    #robot.close_claw()
+    robot.close_claw()
     robot.turn(-45)
     robot.straight(200)
     robot.seek_line("left")
