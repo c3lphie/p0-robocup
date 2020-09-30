@@ -7,19 +7,24 @@ robot = WallE()
 # kør frem til grå linje nr 2
 # følg linje til markø
 def run_module():
+    # Fortsæt lige ud indtil hvid
+    # Drej mod venstre 
+    # seekline straight
     GREYcount = 0
-    SIDSTEFARVE = robot.line_sensor.reflection()
+   
 
     robot.straight(150)
     robot.turn(-45)
 
-    while GREYcount < 3:
+    while GREYcount < 50:
+        SIDSTEFARVE = robot.line_sensor.reflection()
         robot.drive(robot.DRIVE_SPEED, 0)
         if SIDSTEFARVE in range(robot.GREY - 5, robot.GREY + 5):
             GREYcount += 1
+            print(GREYcount)
             if GREYcount == 3:
-                robot.stop
-                return
+                robot.stop()
+                
     robot.straight(100)
     robot.turn(45)        
     robot.follow_line()

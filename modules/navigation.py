@@ -47,7 +47,7 @@ class WallE(DriveBase):
     DRIVE_SPEED = 150
 
     # En faktor der ganges på forskellige værdier
-    PROPORTIONAL_GAIN = 1.2
+    PROPORTIONAL_GAIN = 1.7
 
     # Farve threshold
     threshold = (WHITE + GREY) / 2
@@ -144,7 +144,7 @@ class WallE(DriveBase):
         return
 
     def open_claw(self):
-        self.front_motor.run_until_stalled(-600, then=Stop.HOLD, duty_limit=40)
+        self.front_motor.run_until_stalled(-300, then=Stop.HOLD, duty_limit=53)
         return
 
     def close_claw(self):

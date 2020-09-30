@@ -4,12 +4,11 @@ from pybricks.tools import wait
 
 robot = WallE()
 
-
 def follow_line_slow():
     can_drive = True
     while can_drive:
         # Beregn afvigelse
-        deviation = robot.line_sensor.reflection() - self.threshold
+        deviation = robot.line_sensor.reflection() - robot.threshold
 
         # Beregn turn_rate baseret på afvigelsen
         turn_rate = robot.PROPORTIONAL_GAIN * deviation
@@ -22,7 +21,6 @@ def follow_line_slow():
             robot.stop()
             can_drive = False
 
-
 def run_module():
     robot.turn(-70)
     robot.straight(100)
@@ -31,8 +29,8 @@ def run_module():
     robot.turn(-60)
     robot.follow_line()
 
-    robot.straight(100)
-    robot.follow_line_slow()
+    robot.straight(400)
+    follow_line_slow()
 
     robot.seek_line("left")
     robot.follow_line()
