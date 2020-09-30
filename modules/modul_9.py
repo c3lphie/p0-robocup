@@ -10,7 +10,9 @@ def run_module():
     robot.straight(100)
     # kør indtil grå linje rammes
     robot.seek_line_straight()
+    wait(100)
     robot.turn(-100)
+    wait(100)
     robot.follow_line()
     # tilføj in range til linereflection
     # følg linje til markør
