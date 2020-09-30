@@ -10,8 +10,8 @@ def run_module():
     GREYcount = 0
     max_lines = 3
     SIDSTEFARVE = 1
-    #robot.straight(150)
-    #robot.turn(-45)
+    robot.straight(150)
+    robot.turn(-45)
     
 
     while GREYcount < 3:
@@ -27,7 +27,7 @@ def run_module():
 
     robot.straight(100)
     robot.turn(45)        
-    #robot.follow_line()
+    robot.follow_line()
 
 # tjek reflektion
 # hvis sidste farve ikke er ny farve
