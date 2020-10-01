@@ -9,11 +9,10 @@ def run_module():
 
     drive2 = True
     drive3 = False
-    robot.close_claw()
 
     # Bak til grå linje og drej 135 grader mod venstre
     robot.straight(-350)
-    while drive2:        
+    while drive2:
         if robot.line_sensor.reflection() >= robot.GREY + 5:
             robot.turn(-230)
             drive3 = True
