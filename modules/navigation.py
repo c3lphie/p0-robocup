@@ -154,5 +154,5 @@ class WallE(DriveBase):
         return
 
     def close_claw(self):
-        self.front_motor.run_until_stalled(300, then=Stop.HOLD, duty_limit=60)
+        self.front_motor.run_until_stalled(300, then=Stop.HOLD, duty_limit=70)
         return

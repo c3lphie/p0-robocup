@@ -8,8 +8,6 @@ robot = WallE()
 
 
 def run_module():
-    robot.close_claw()
-    robot.open_claw()
     # kør frem til hvid rammes
     robot.straight(100)
 

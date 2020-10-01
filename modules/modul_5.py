@@ -6,7 +6,7 @@ robot = WallE()
 
 
 def run_module():
-
+    robot.close_claw()
     drive2 = True
     drive3 = False
 

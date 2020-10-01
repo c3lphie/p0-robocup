@@ -15,7 +15,7 @@ def run_module():
     robot.straight(50)
     
 
-    while GREYcount < 2:
+    while GREYcount < 3:
         robot.drive(robot.DRIVE_SPEED, 0)
         if robot.line_sensor.reflection() in range(robot.GREY - 10, robot.GREY + 10):
             if SIDSTEFARVE == 1:

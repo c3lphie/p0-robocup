@@ -9,10 +9,10 @@ def run_module():
     robot.turn(60)
 
     # køre 15 cm frem
-    robot.straight(550)
+    robot.straight(500)
 
     # drejer 90+ grader mod venstre
-    robot.turn(-150)
+    robot.turn(-180)
 
     # køre frem til grå linje findes og følger den frem til markøren
 
