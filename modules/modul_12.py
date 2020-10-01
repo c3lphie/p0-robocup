@@ -7,7 +7,7 @@ robot = WallE()
 def run_module():
     # drejer 45 grader mod højre
     robot.turn(60)
-
+    robot.close_claw()
     # køre 15 cm frem
     robot.straight(500)
 
@@ -18,4 +18,5 @@ def run_module():
 
     robot.seek_line_straight()
     robot.turn(30)
+    robot.open_claw()
     robot.follow_line()

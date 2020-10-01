@@ -32,6 +32,7 @@ def run_module():
     robot.turn(-90)
 
     robot.seek_line_straight()
+    robot.turn(30)
     robot.follow_line()
 
 
