@@ -16,28 +16,14 @@ def run_module():
     robot.follow_line()
 
     # Kør til centrum
-    i = 0
-    max_lines = 5
-    while i < max_lines:
-        robot.drive(robot.DRIVE_SPEED, 0)
-        if robot.line_sensor.reflection() in range(robot.GREY - 5, robot.GREY + 5):
-            i += 1
-            print(i)
-            ev3.screen.print(i)
-            if i == max_lines:
-                robot.stop
+    radius = 500
+    robot.straight(radius)
 
     # Sæt flaske
     robot.open_claw()
 
     # Bak til grå
-    i = 0
-    while i < max_lines:
-        robot.drive(-robot.DRIVE_SPEED, 0)
-        if robot.line_sensor.reflection() in range(robot.GREY - 5, robot.GREY + 5):
-            i += 1
-            if i == max_lines:
-                robot.stop
+    robot.straight(-radius)
 
     robot.turn(180)
     robot.follow_line()

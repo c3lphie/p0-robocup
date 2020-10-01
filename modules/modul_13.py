@@ -14,21 +14,27 @@ def run_module():
     robot.straight(100)
 
     # mål afstand til væg
-    #Afstand = robot.ultra_sensor.distance()
+    # Afstand = robot.ultra_sensor.distance()
 
     # del afstand med to
-    #Afstand_stop = Afstand / 2
+    # Afstand_stop = Afstand / 2
 
     # kør frem til afstands måler viser forrige svar
-    move2 = True
+    can_drive = True
+    while can_drive:
+        # Beregn afvigelse
+        deviation = robot.line_sensor.reflection() - robot.threshold
 
-    while move2:
-        Distance_measured = robot.distance()
-        if Distance_measured == 1350:
+        # Beregn turn_rate baseret på afvigelsen
+        turn_rate = -robot.PROPORTIONAL_GAIN * deviation
+
+        # Kør robot
+        robot.drive(robot.DRIVE_SPEED, turn_rate)
+
+        # Tjekker om værdien for farvesensoren er inden for range
+        if robot.ultra_sensor.distance() <= 1350:
             robot.stop()
-            move2 = False
-        else:
-            robot.follow_lineR2L()
+            can_drive = False
 
     # stop
     # Afspil we are the champions
