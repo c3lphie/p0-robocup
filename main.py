@@ -22,15 +22,14 @@ wait(1000)
 
 
 def run():
-    # modul_1.run_module()
-    # modul_2.run_module()
-    # modul_3.run_module()
-    # modul_4.run_module()
-    #modul_5.run_module()
-    # modul_6a.run_module()
-    # modul_7.run_module()
-    # modul_8.run_module()
-   # modul_9.run_module()
+    modul_1.run_module()
+    modul_2.run_module()
+    modul_3.run_module()
+    modul_4.run_module()
+    modul_5.run_module()
+    modul_6a.run_module()
+    modul_7.run_module()
+    modul_9.run_module()
     modul_10.run_module()
     modul_11.run_module()
     modul_12.run_module()
@@ -40,8 +39,3 @@ def run():
 
 if __name__ == "__main__":
     run()
-    robot = navigation.WallE()
-
-    # robot.close_claw()
-    # wait(100)
-    # robot.open_claw()

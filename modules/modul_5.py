@@ -6,12 +6,12 @@ robot = WallE()
 
 
 def run_module():
-    robot.close_claw()
     drive2 = True
     drive3 = False
 
     # Bak til grå linje og drej 135 grader mod venstre
     robot.straight(-250)
+    robot.close_claw()
     while drive2:
         if robot.line_sensor.reflection() >= robot.GREY + 5:
             robot.turn(-230)
