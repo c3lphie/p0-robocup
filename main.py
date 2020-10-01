@@ -22,18 +22,18 @@ wait(1000)
 
 
 def run():
-    # modul_1.run_module()
-    # modul_2.run_module()
-    # modul_3.run_module()
-    # modul_4.run_module()
-    # modul_5.run_module()
-    # modul_6a.run_module()
-    # modul_7.run_module()
+    modul_1.run_module()
+    modul_2.run_module()
+    modul_3.run_module()
+    modul_4.run_module()
+    modul_5.run_module()
+    modul_6a.run_module()
+    modul_7.run_module()
     modul_9.run_module()
-    # modul_10.run_module()
-    # modul_11.run_module()
-    # modul_12.run_module()
-    # modul_13.run_module()
+    modul_10.run_module()
+    modul_11.run_module()
+    modul_12.run_module()
+    modul_13.run_module()
     return
 
 

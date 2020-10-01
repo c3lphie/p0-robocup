@@ -8,14 +8,10 @@ robot = WallE()
 
 
 def run_module():
-    move = True
-    move2 = False
-
+    robot.close_claw()
+    robot.open_claw()
     # kør frem til hvid rammes
-    while move:
-        robot.straight(500)
-        robot.reset()
-        move = False
+    robot.straight(100)
 
     # mål afstand til væg
     #Afstand = robot.ultra_sensor.distance()
@@ -32,7 +28,7 @@ def run_module():
             robot.stop()
             move2 = False
         else:
-            robot.follow_line
+            robot.follow_lineR2L()
 
     # stop
     # Afspil we are the champions

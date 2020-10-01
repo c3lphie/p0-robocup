@@ -15,7 +15,7 @@ def run_module():
     while robot.ultra_sensor.distance()>=500:
         robot.turn(5)
     robot.stop
-    robot.turn(35)
+    robot.turn(45)
     robot.DRIVE_SPEED = 100
     # robot.follow_lineR2L()
     # # Åben klo
