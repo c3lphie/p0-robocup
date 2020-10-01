@@ -44,10 +44,10 @@ class WallE(DriveBase):
     GREY = 65
 
     # Motorens hastighed i grader per sekund
-    DRIVE_SPEED = 150
+    DRIVE_SPEED = 200
 
     # En faktor der ganges på forskellige værdier
-    PROPORTIONAL_GAIN = 1.7
+    PROPORTIONAL_GAIN = 2.5
 
     # Farve threshold
     threshold = (WHITE + GREY) / 2

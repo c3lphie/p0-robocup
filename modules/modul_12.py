@@ -9,14 +9,16 @@ def run_module():
     robot.turn(60)
     robot.close_claw()
     # køre 15 cm frem
-    robot.straight(500)
+    robot.straight(550)
 
     # drejer 90+ grader mod venstre
-    robot.turn(-180)
+    robot.turn(-170)
 
     # køre frem til grå linje findes og følger den frem til markøren
 
     robot.seek_line_straight()
-    robot.turn(30)
+    robot.straight(70)
+    robot.turn(50)
     robot.open_claw()
+    robot.PROPORTIONAL_GAIN = 3
     robot.follow_line()

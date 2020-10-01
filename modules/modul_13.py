@@ -9,7 +9,9 @@ robot = WallE()
 
 def run_module():
     # kør frem til hvid rammes
-    robot.straight(100)
+    robot.straight(1000)
+    robot.turn(-15)
+    robot.straight(300)
 
     # mål afstand til væg
     # Afstand = robot.ultra_sensor.distance()
@@ -20,14 +22,8 @@ def run_module():
     # kør frem til afstands måler viser forrige svar
     can_drive = True
     while can_drive:
-        # Beregn afvigelse
-        deviation = robot.line_sensor.reflection() - robot.threshold
-
-        # Beregn turn_rate baseret på afvigelsen
-        turn_rate = -robot.PROPORTIONAL_GAIN * deviation
-
         # Kør robot
-        robot.drive(robot.DRIVE_SPEED, turn_rate)
+        robot.drive(robot.DRIVE_SPEED, 0)
 
         # Tjekker om værdien for farvesensoren er inden for range
         if robot.ultra_sensor.distance() <= 1350:

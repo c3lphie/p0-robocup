@@ -33,7 +33,7 @@ def run_module():
 
     robot.seek_line_straight()
     robot.turn(30)
-    robot.follow_line()
+    robot.follow_lineR2L()
 
 
     # ny kode for alternativ løsning
