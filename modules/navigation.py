@@ -39,9 +39,9 @@ class WallE(DriveBase):
     # GREY = 48
 
     # Testbanens værdier
-    BLACK = 12
-    WHITE = 100
-    GREY = 65
+    BLACK = 8
+    WHITE = 98
+    GREY = 58
 
     # Motorens hastighed i grader per sekund
     DRIVE_SPEED = 200
@@ -150,9 +150,9 @@ class WallE(DriveBase):
         return
 
     def open_claw(self):
-        self.front_motor.run_until_stalled(-600, then=Stop.HOLD, duty_limit=60)
+        self.front_motor.run_until_stalled(-600, then=Stop.HOLD, duty_limit=55)
         return
 
     def close_claw(self):
-        self.front_motor.run_until_stalled(300, then=Stop.HOLD, duty_limit=70)
+        self.front_motor.run_until_stalled(300, then=Stop.HOLD, duty_limit=65)
         return

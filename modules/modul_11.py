@@ -8,7 +8,7 @@ def run_module():
     # køre frem til 10 cm til mur
     robot.open_claw()
     robot.turn(30)
-    robot.straight(600)
+    robot.straight(465)
     robot.turn(-30)
 
     # drejer 45 grader mod venstre
@@ -24,12 +24,12 @@ def run_module():
 
     # robotten drejer 90 grader mod højre og køre 30 cm frem.
 
-    robot.turn(135)
+    robot.turn(150)
     robot.straight(650)
 
     # drejer 90 grader mod venstre, søger efter grå linje og følger den.
 
-    robot.turn(-90)
+    robot.turn(-110)
 
     robot.seek_line_straight()
     robot.turn(30)

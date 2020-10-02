@@ -9,7 +9,7 @@ def run_module():
     robot.turn(60)
     robot.close_claw()
     # køre 15 cm frem
-    robot.straight(550)
+    robot.straight(650)
 
     # drejer 90+ grader mod venstre
     robot.turn(-170)

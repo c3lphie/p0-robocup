@@ -17,11 +17,12 @@ from modules import (
     navigation,
 )
 from pybricks.tools import wait
-
+robot = navigation.WallE()
 wait(1000)
 
 
 def run():
+    robot.close_claw()
     modul_1.run_module()
     modul_2.run_module()
     modul_3.run_module()
@@ -34,6 +35,7 @@ def run():
     modul_11.run_module()
     modul_12.run_module()
     modul_13.run_module()
+    
     return
 
 
