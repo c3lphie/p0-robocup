@@ -12,7 +12,7 @@ def run_module():
     SIDSTEFARVE = 1
     robot.straight(150)
     robot.turn(-45)
-    robot.straight(50)
+    robot.straight(100)
     
 
     while GREYcount < 3:

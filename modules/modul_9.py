@@ -7,7 +7,7 @@ robot = WallE()
 
 def run_module():
     # Drej 20 grader venstre
-    # robot.turn(-20)
+    robot.turn(-20)
     robot.straight(150)
     # kør indtil grå linje rammes
     # robot.seek_line_straight()

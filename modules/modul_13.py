@@ -31,6 +31,8 @@ def run_module():
             robot.stop()
             can_drive = False
 
+    robot.close_claw()
+
     # stop
     # Afspil we are the champions
     ev3.speaker.play_file("music.wav")
